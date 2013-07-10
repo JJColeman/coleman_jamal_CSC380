@@ -32,23 +32,15 @@ public class ThreadServer extends Thread
 
             MathLogic mathLogic = new MathLogic();
             out.println("Server:'Received a connection'");
-            out.flush();
             out.println("Type in 'add' to do addition");
-            out.flush();
             out.println("Type in 'subtract' to do subtraction");
-            out.flush();
             out.println("Type in 'exit' to end your session");
-            out.flush();
-            out.println("Insert Now");
-            out.flush();
+            boolean done = false;
 
-            while((readLines = in.readLine()) != null ||
-                    (readLines = in.readLine()).equals("") ||
-                    (readLines = in.readLine()) == null)
+            while(!done)
             {
-                out.println("Insert Now");
-                out.flush();
-
+                out.println("Type in your number");
+                readLines = in.readLine();
                 if(readLines.matches("[0-9]*,[0-9]*,add"))
                 {
                     String[] split = readLines.split(",");
@@ -57,7 +49,6 @@ public class ThreadServer extends Thread
                     int totalNumber = 0;
                     totalNumber = mathLogic.add(firstNumber,secondNumber);
                     out.println(totalNumber);
-                    out.flush();
                 }
 
                 else if(readLines.matches("[0-9]*,[0-9]*,subtract"))
@@ -68,15 +59,16 @@ public class ThreadServer extends Thread
                     int totalNumber = 0;
                     totalNumber = mathLogic.subtract(firstNumber,secondNumber);
                     out.println(totalNumber);
-                    out.flush();
                 }
 
                 else if(readLines.equals("exit"))
                 {
-                    out.close();
-                    in.close();
-                    clientsocket.close();
-                    break;
+                    done = true;
+                }
+
+                else
+                {
+                    out.println("Bad format, correct format is :##,##,(add,subtract) or exit");
                 }
             }
 

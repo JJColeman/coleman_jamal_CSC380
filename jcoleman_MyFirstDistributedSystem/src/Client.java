@@ -27,19 +27,25 @@ public class Client
         String readLines = "";
         String userInput = "";
         Scanner scan = new Scanner(System.in);
+        boolean done = false;
 
-        while((readLines = in.readLine()) != null ||
-                (checkInput(readLines))||
-                (readLines = in.readLine()) == null ||
-                (readLines = in.readLine()).equals(""))
+        while(!done)
         {
-            System.out.println(readLines);
-            if(checkInput(readLines))
-            {
-                userInput = scan.nextLine();
-                out.println(userInput);
-                out.flush();
-            }
+             readLines = in.readLine();
+             if(readLines == null || readLines.equals("") || readLines.equals("Type in your number"))
+             {
+                 userInput = scan.nextLine();
+                 out.println(userInput);
+                 if(userInput.equals("exit"))
+                 {
+                     done = true;
+                 }
+             }
+
+             else
+             {
+                   System.out.println(readLines);
+             }
         }
 
         out.close();
