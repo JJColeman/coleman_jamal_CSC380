@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.lang.reflect.Method;
 import java.net.Socket;
 
 /**
@@ -30,15 +31,17 @@ public class ThreadServer extends Thread
             String inputLine = "";
             String readLines = "";
 
-            MathLogic mathLogic = new MathLogic();
+            Class mathLogic = Class.forName("MathLogic");
             out.println("Server:'Received a connection'");
             out.println("Type in 'add' to do addition");
             out.println("Type in 'subtract' to do subtraction");
             out.println("Type in 'exit' to end your session");
+            out.println("Format is in, ###+...,###+,...add or subtract or etc...");
             boolean done = false;
 
             while(!done)
             {
+                Object math = mathLogic.getConstructor().newInstance();
                 out.println("Type in your number");
                 readLines = in.readLine();
                 if(readLines.matches("[0-9]*,[0-9]*,add"))
@@ -47,8 +50,8 @@ public class ThreadServer extends Thread
                     int firstNumber = Integer.parseInt(split[0]);
                     int secondNumber = Integer.parseInt(split[1]);
                     int totalNumber = 0;
-                    totalNumber = mathLogic.add(firstNumber,secondNumber);
-                    out.println(totalNumber);
+                    Method add = mathLogic.getDeclaredMethod("add",int.class,int.class);
+                    out.println(add.invoke(math,firstNumber,secondNumber));
                 }
 
                 else if(readLines.matches("[0-9]*,[0-9]*,subtract"))
@@ -57,8 +60,8 @@ public class ThreadServer extends Thread
                     int firstNumber = Integer.parseInt(split[0]);
                     int secondNumber = Integer.parseInt(split[1]);
                     int totalNumber = 0;
-                    totalNumber = mathLogic.subtract(firstNumber,secondNumber);
-                    out.println(totalNumber);
+                    Method subtract = mathLogic.getDeclaredMethod("subtract",int.class,int.class);
+                    out.println(subtract.invoke(math,firstNumber,secondNumber));
                 }
 
                 else if(readLines.equals("exit"))
@@ -79,6 +82,8 @@ public class ThreadServer extends Thread
         catch(IOException e)
         {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }
 }
