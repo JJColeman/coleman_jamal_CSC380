@@ -32,11 +32,11 @@ public class Client
         while(!done)
         {
              readLines = in.readLine();
-             if(readLines == null || readLines.equals("") || readLines.equals("Type in your number"))
+             if(readLines.equals(""))
              {
                  userInput = scan.nextLine();
                  out.println(userInput);
-                 if(userInput.equals("exit"))
+                 if(userInput.equals("3"))
                  {
                      done = true;
                  }
