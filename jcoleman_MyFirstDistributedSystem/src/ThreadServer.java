@@ -1,13 +1,15 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import sun.reflect.Reflection;
+import org.reflections.*;
+import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.net.Socket;
 import java.lang.Object;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class ThreadServer extends Thread
 {
@@ -57,9 +59,28 @@ public class ThreadServer extends Thread
 
             String readLines = "";
 
-            Class<?> mathLogic = Class.forName("MathLogic");
-            boolean done = false;
+            String path = "src";
+            File folder = new File(path);
+            List<Class> classes = new ArrayList<Class>();
 
+            for(int i=0;i < folder.listFiles().length;i++)
+            {
+                Class grabbingClass = Class.forName(folder.listFiles()[i].getName().replaceFirst(".java",""));
+                classes.add(grabbingClass);
+            }
+
+            out.println("Type in one of the following classes to use");
+
+            for(Class l : classes)
+            {
+                out.println(l.getName());
+            }
+
+            out.println("");
+            readLines = in.readLine();
+
+            Class <?> mathLogic = Class.forName(readLines);
+            boolean done = false;
             Method[] methods = mathLogic.getDeclaredMethods();
 
             while(!done)
