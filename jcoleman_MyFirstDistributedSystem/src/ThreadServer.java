@@ -93,7 +93,7 @@ public class ThreadServer extends Thread
                     {
                         if(((Integer.parseInt(readLines))) == x)
                         {
-                             choice = x;
+                             choice = x - 1;
                         }
                     }
 
@@ -145,9 +145,10 @@ public class ThreadServer extends Thread
                             classesParemeters[i] = methods[choice].getParameterTypes()[i].getClass();
                         }
 
-                        Constructor<? extends MathLogic> reflect2 = (Constructor<? extends MathLogic>) mathLogic.getConstructor(methods[choice].getParameterTypes());
+                        Method reflect2 =  mathLogic.getDeclaredMethod(methods[choice].getName(), methods[choice].getParameterTypes());
+                        Object math = mathLogic.newInstance();
+                        out.println(reflect2.invoke(math,userConverterObjects));
 
-                        out.println(methods[choice].invoke(reflect2,(Object) methods[choice].getParameterTypes()));
                     }
 
                     else

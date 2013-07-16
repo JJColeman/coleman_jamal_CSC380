@@ -36,10 +36,6 @@ public class Client
              {
                  userInput = scan.nextLine();
                  out.println(userInput);
-                 if(userInput.equals("3"))
-                 {
-                     done = true;
-                 }
              }
 
              else

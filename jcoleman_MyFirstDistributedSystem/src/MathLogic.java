@@ -24,4 +24,8 @@ public class MathLogic
     {
         return a + b;
     }
+
+    public int add(int a) {
+        return 0;
+    }
 }
