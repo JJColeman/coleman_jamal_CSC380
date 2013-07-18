@@ -1,15 +1,10 @@
-import sun.reflect.Reflection;
-import org.reflections.*;
 import java.io.*;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.net.Socket;
 import java.lang.Object;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class ThreadServer extends Thread
 {
@@ -20,12 +15,72 @@ public class ThreadServer extends Thread
         this.clientsocket = clientsocket;
     }
 
-    public boolean tryParseInt(String input)
+    public boolean tryParseByte(String input)
+    {
+        boolean inputParseAble = true;
+        try
+        {
+            Byte.parseByte(input);
+        }
+        catch(NumberFormatException e)
+        {
+            inputParseAble = false;
+        }
+
+        return inputParseAble;
+    }
+
+    public boolean tryParseShort(String input)
+    {
+        boolean inputParseAble = true;
+        try
+        {
+            Short.parseShort(input);
+        }
+        catch(NumberFormatException e)
+        {
+            inputParseAble = false;
+        }
+
+        return inputParseAble;
+    }
+
+    public boolean tryParseInteger(String input)
     {
         boolean inputParseAble = true;
         try
         {
             Integer.parseInt(input);
+        }
+        catch(NumberFormatException e)
+        {
+            inputParseAble = false;
+        }
+
+        return inputParseAble;
+    }
+
+    public boolean tryParseLong(String input)
+    {
+        boolean inputParseAble = true;
+        try
+        {
+            Long.parseLong(input);
+        }
+        catch(NumberFormatException e)
+        {
+            inputParseAble = false;
+        }
+
+        return inputParseAble;
+    }
+
+    public boolean tryParseFloat(String input)
+    {
+        boolean inputParseAble = true;
+        try
+        {
+            Float.parseFloat(input);
         }
         catch(NumberFormatException e)
         {
@@ -41,6 +96,21 @@ public class ThreadServer extends Thread
         try
         {
             Double.parseDouble(input);
+        }
+        catch(NumberFormatException e)
+        {
+            inputParseAble = false;
+        }
+
+        return inputParseAble;
+    }
+
+    public boolean tryParseBoolean(String input)
+    {
+        boolean inputParseAble = true;
+        try
+        {
+            Boolean.parseBoolean(input);
         }
         catch(NumberFormatException e)
         {
@@ -112,9 +182,9 @@ public class ThreadServer extends Thread
                     int choice = 0;
                     for(int x = 0; x < methods.length;x++)
                     {
-                        if(((Integer.parseInt(readLines))) == x)
+                        if(((Integer.parseInt(readLines))) == x + 1)
                         {
-                             choice = x - 1;
+                             choice = x;
                         }
                     }
 
@@ -139,17 +209,77 @@ public class ThreadServer extends Thread
                        correctFormat = false;
                     }
 
-                    for(int i = 0; i < userConverterObjects.length;i++)
-                    {
-                        userConverterObjects[i] = userInput[i];
-                    }
-
                     if(correctFormat)
                     {
-                        Class<?>[] classesParemeters = new Class[methods[choice].getParameterTypes().length];
-                        for(int i = 0;i < methods[choice].getParameterTypes().length;i++)
+                        for(int i = 0; i < userConverterObjects.length;i++)
                         {
-                            classesParemeters[i] = methods[choice].getParameterTypes()[i].getClass();
+                            if(methods[choice].getGenericParameterTypes()[i].equals(Integer.TYPE))
+                            {
+                                boolean isInt = tryParseInteger(userInput[i]);
+                                if(isInt)
+                                {
+                                    userConverterObjects[i] = Integer.parseInt(userInput[i]);
+                                }
+                            }
+
+                            else if(methods[choice].getGenericParameterTypes()[i].equals(Byte.TYPE))
+                            {
+                                boolean isByte = tryParseByte(userInput[i]);
+                                if(isByte)
+                                {
+                                    userConverterObjects[i] = Byte.parseByte(userInput[i]);
+                                }
+                            }
+
+                            else if(methods[choice].getGenericParameterTypes()[i].equals(Short.TYPE))
+                            {
+                                boolean isShort = tryParseShort(userInput[i]);
+                                if(isShort)
+                                {
+                                    userConverterObjects[i] = Short.parseShort(userInput[i]);
+                                }
+                            }
+
+                            else if(methods[choice].getGenericParameterTypes()[i].equals(Long.TYPE))
+                            {
+                                boolean isLong = tryParseLong(userInput[i]);
+                                if(isLong)
+                                {
+                                    userConverterObjects[i] = Long.parseLong(userInput[i]);
+                                }
+                            }
+
+                            else if(methods[choice].getGenericParameterTypes()[i].equals(Float.TYPE))
+                            {
+                                boolean isFloat = tryParseFloat(userInput[i]);
+                                if(isFloat)
+                                {
+                                    userConverterObjects[i] = Float.parseFloat(userInput[i]);
+                                }
+                            }
+
+                            else if(methods[choice].getGenericParameterTypes()[i].equals(Double.TYPE))
+                            {
+                                boolean isDouble = tryParseDouble(userInput[i]);
+                                if(isDouble)
+                                {
+                                    userConverterObjects[i] = Double.parseDouble(userInput[i]);
+                                }
+                            }
+
+                            else if(methods[choice].getGenericParameterTypes()[i].equals(Boolean.TYPE))
+                            {
+                                boolean isBoolean = tryParseBoolean(userInput[i]);
+                                if(isBoolean)
+                                {
+                                    userConverterObjects[i] = Boolean.parseBoolean(userInput[i]);
+                                }
+                            }
+
+                            else
+                            {
+                                userConverterObjects[i] = userInput[i];
+                            }
                         }
 
                         Method UsingMethod =  UsingClass.getDeclaredMethod(methods[choice].getName(), methods[choice].getParameterTypes());
