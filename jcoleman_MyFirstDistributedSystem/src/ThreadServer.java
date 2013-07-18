@@ -79,9 +79,9 @@ public class ThreadServer extends Thread
             out.println("");
             readLines = in.readLine();
 
-            Class <?> mathLogic = Class.forName(readLines);
+            Class <?> UsingClass = Class.forName(readLines);
             boolean done = false;
-            Method[] methods = mathLogic.getDeclaredMethods();
+            Method[] methods = UsingClass.getDeclaredMethods();
 
             while(!done)
             {
@@ -120,8 +120,7 @@ public class ThreadServer extends Thread
 
                     out.println("Please enter the in the number/text correct");
                     out.println("If there are multiply things that need to be enter, please separate them by comas");
-                    out.println("For example: 3993,hello,6.5");
-                    out.println("MUST ENTER A DOUBLE or STRING or INTEGER");
+                    out.println("For example: 3993,hello,6.5,WIll 5.5");
                     out.println("The format of the method " + methods[choice] + "is: ");
                     for(int h = 0; h < methods[choice].getParameterTypes().length;h++)
                     {
@@ -142,20 +141,7 @@ public class ThreadServer extends Thread
 
                     for(int i = 0; i < userConverterObjects.length;i++)
                     {
-                        if(tryParseInt(userInput[i]))
-                        {
-                           userConverterObjects[i] = Integer.parseInt(userInput[i]);
-                        }
-
-                        else if(tryParseDouble(userInput[i]))
-                        {
-                            userConverterObjects[i] = Double.parseDouble(userInput[i]);
-                        }
-
-                        else
-                        {
-                             userConverterObjects[i] = userInput[i];
-                        }
+                        userConverterObjects[i] = userInput[i];
                     }
 
                     if(correctFormat)
@@ -166,9 +152,9 @@ public class ThreadServer extends Thread
                             classesParemeters[i] = methods[choice].getParameterTypes()[i].getClass();
                         }
 
-                        Method reflect2 =  mathLogic.getDeclaredMethod(methods[choice].getName(), methods[choice].getParameterTypes());
-                        Object math = mathLogic.newInstance();
-                        out.println(reflect2.invoke(math,userConverterObjects));
+                        Method UsingMethod =  UsingClass.getDeclaredMethod(methods[choice].getName(), methods[choice].getParameterTypes());
+                        Object usingClass = UsingClass.newInstance();
+                        out.println(UsingMethod.invoke(usingClass,userConverterObjects));
 
                     }
 
