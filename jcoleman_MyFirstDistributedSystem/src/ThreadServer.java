@@ -1,4 +1,6 @@
 import java.io.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.net.Socket;
@@ -120,6 +122,179 @@ public class ThreadServer extends Thread
         return inputParseAble;
     }
 
+    public void converterSplitUserInput(Object[] userConverterObjects, String[] userInput,Constructor constructor)
+    {
+        for(int i = 0; i < userConverterObjects.length;i++)
+        {
+            if(constructor.getGenericParameterTypes()[i].equals(Integer.TYPE))
+            {
+                boolean isInt = tryParseInteger(userInput[i]);
+                if(isInt)
+                {
+                    userConverterObjects[i] = Integer.parseInt(userInput[i]);
+                }
+            }
+
+            else if(constructor.getGenericParameterTypes()[i].equals(Byte.TYPE))
+            {
+                boolean isByte = tryParseByte(userInput[i]);
+                if(isByte)
+                {
+                    userConverterObjects[i] = Byte.parseByte(userInput[i]);
+                }
+            }
+
+            else if(constructor.getGenericParameterTypes()[i].equals(Short.TYPE))
+            {
+                boolean isShort = tryParseShort(userInput[i]);
+                if(isShort)
+                {
+                    userConverterObjects[i] = Short.parseShort(userInput[i]);
+                }
+            }
+
+            else if(constructor.getGenericParameterTypes()[i].equals(Long.TYPE))
+            {
+                boolean isLong = tryParseLong(userInput[i]);
+                if(isLong)
+                {
+                    userConverterObjects[i] = Long.parseLong(userInput[i]);
+                }
+            }
+
+            else if(constructor.getGenericParameterTypes()[i].equals(Float.TYPE))
+            {
+                boolean isFloat = tryParseFloat(userInput[i]);
+                if(isFloat)
+                {
+                    userConverterObjects[i] = Float.parseFloat(userInput[i]);
+                }
+            }
+
+            else if(constructor.getGenericParameterTypes()[i].equals(Double.TYPE))
+            {
+                boolean isDouble = tryParseDouble(userInput[i]);
+                if(isDouble)
+                {
+                    userConverterObjects[i] = Double.parseDouble(userInput[i]);
+                }
+            }
+
+            else if(constructor.getGenericParameterTypes()[i].equals(Boolean.TYPE))
+            {
+                boolean isBoolean = tryParseBoolean(userInput[i]);
+                if(isBoolean)
+                {
+                    userConverterObjects[i] = Boolean.parseBoolean(userInput[i]);
+                }
+            }
+
+            else
+            {
+                userConverterObjects[i] = userInput[i];
+            }
+        }
+    }
+
+    public void converterUserInput(List<Class> classes,Object[] userConverterObjects, Method method, String[] userInput)
+    {
+        for(int i = 0; i < userConverterObjects.length;i++)
+        {
+            if(method.getGenericParameterTypes()[i].equals(Integer.TYPE))
+            {
+                boolean isInt = tryParseInteger(userInput[i]);
+                if(isInt)
+                {
+                    userConverterObjects[i] = Integer.parseInt(userInput[i]);
+                }
+            }
+
+            else if(method.getGenericParameterTypes()[i].equals(Byte.TYPE))
+            {
+                boolean isByte = tryParseByte(userInput[i]);
+                if(isByte)
+                {
+                    userConverterObjects[i] = Byte.parseByte(userInput[i]);
+                }
+            }
+
+            else if(method.getGenericParameterTypes()[i].equals(Short.TYPE))
+            {
+                boolean isShort = tryParseShort(userInput[i]);
+                if(isShort)
+                {
+                    userConverterObjects[i] = Short.parseShort(userInput[i]);
+                }
+            }
+
+            else if(method.getGenericParameterTypes()[i].equals(Long.TYPE))
+            {
+                boolean isLong = tryParseLong(userInput[i]);
+                if(isLong)
+                {
+                    userConverterObjects[i] = Long.parseLong(userInput[i]);
+                }
+            }
+
+            else if(method.getGenericParameterTypes()[i].equals(Float.TYPE))
+            {
+                boolean isFloat = tryParseFloat(userInput[i]);
+                if(isFloat)
+                {
+                    userConverterObjects[i] = Float.parseFloat(userInput[i]);
+                }
+            }
+
+            else if(method.getGenericParameterTypes()[i].equals(Double.TYPE))
+            {
+                boolean isDouble = tryParseDouble(userInput[i]);
+                if(isDouble)
+                {
+                    userConverterObjects[i] = Double.parseDouble(userInput[i]);
+                }
+            }
+
+            else if(method.getGenericParameterTypes()[i].equals(Boolean.TYPE))
+            {
+                boolean isBoolean = tryParseBoolean(userInput[i]);
+                if(isBoolean)
+                {
+                    userConverterObjects[i] = Boolean.parseBoolean(userInput[i]);
+                }
+            }
+
+            else if(userInput[i].matches("\\w+!\\w+"))
+            {
+                String[] splitUserInput = userInput[i].split("!");
+                Object[] splitUserInputObjects = new Object[splitUserInput.length];
+                for(Class cl: classes)
+                {
+                    if(cl.equals(method.getParameterTypes()[i]))
+                    {
+                        Constructor[] constructors = cl.getDeclaredConstructors();
+                        converterSplitUserInput(splitUserInputObjects,splitUserInput,constructors[0]);
+                        try {
+                            userConverterObjects[i] = cl.getConstructor(constructors[0].getParameterTypes()).newInstance(splitUserInputObjects);
+                        } catch (InstantiationException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        } catch (NoSuchMethodException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                userConverterObjects[i] = userInput[i];
+            }
+        }
+    }
+
     public void run()
     {
         try
@@ -191,11 +366,32 @@ public class ThreadServer extends Thread
                     out.println("Please enter the in the number/text correct");
                     out.println("If there are multiply things that need to be enter, please separate them by comas");
                     out.println("For example: 3993,hello,6.5,WIll 5.5");
+                    out.println("IF object is not primitive or a string, such as a custom class object");
+                    out.println("New format is For example class Rogue(int,double)");
+                    out.println("Method for (Rogue,int");
+                    out.println("You would type in int!double,int");
                     out.println("The format of the method " + methods[choice] + "is: ");
                     for(int h = 0; h < methods[choice].getParameterTypes().length;h++)
                     {
                         out.println(methods[choice].getParameterTypes()[h]);
+                        for(Class cl: classes)
+                        {
+                            if(cl.equals(methods[choice].getParameterTypes()[h]))
+                            {
+                                Constructor[] constructors = cl.getDeclaredConstructors();
+                                for(Constructor c: constructors)
+                                {
+                                    Class[] parameterTypes = c.getParameterTypes();
+                                    out.println("Constructor parameters Rogue are: ");
+                                    for(Class p: parameterTypes)
+                                    {
+                                        out.println(p.getSimpleName());
+                                    }
+                                }
+                            }
+                        }
                     }
+
                     out.println("");
 
                     readLines = in.readLine();
@@ -211,81 +407,10 @@ public class ThreadServer extends Thread
 
                     if(correctFormat)
                     {
-                        for(int i = 0; i < userConverterObjects.length;i++)
-                        {
-                            if(methods[choice].getGenericParameterTypes()[i].equals(Integer.TYPE))
-                            {
-                                boolean isInt = tryParseInteger(userInput[i]);
-                                if(isInt)
-                                {
-                                    userConverterObjects[i] = Integer.parseInt(userInput[i]);
-                                }
-                            }
-
-                            else if(methods[choice].getGenericParameterTypes()[i].equals(Byte.TYPE))
-                            {
-                                boolean isByte = tryParseByte(userInput[i]);
-                                if(isByte)
-                                {
-                                    userConverterObjects[i] = Byte.parseByte(userInput[i]);
-                                }
-                            }
-
-                            else if(methods[choice].getGenericParameterTypes()[i].equals(Short.TYPE))
-                            {
-                                boolean isShort = tryParseShort(userInput[i]);
-                                if(isShort)
-                                {
-                                    userConverterObjects[i] = Short.parseShort(userInput[i]);
-                                }
-                            }
-
-                            else if(methods[choice].getGenericParameterTypes()[i].equals(Long.TYPE))
-                            {
-                                boolean isLong = tryParseLong(userInput[i]);
-                                if(isLong)
-                                {
-                                    userConverterObjects[i] = Long.parseLong(userInput[i]);
-                                }
-                            }
-
-                            else if(methods[choice].getGenericParameterTypes()[i].equals(Float.TYPE))
-                            {
-                                boolean isFloat = tryParseFloat(userInput[i]);
-                                if(isFloat)
-                                {
-                                    userConverterObjects[i] = Float.parseFloat(userInput[i]);
-                                }
-                            }
-
-                            else if(methods[choice].getGenericParameterTypes()[i].equals(Double.TYPE))
-                            {
-                                boolean isDouble = tryParseDouble(userInput[i]);
-                                if(isDouble)
-                                {
-                                    userConverterObjects[i] = Double.parseDouble(userInput[i]);
-                                }
-                            }
-
-                            else if(methods[choice].getGenericParameterTypes()[i].equals(Boolean.TYPE))
-                            {
-                                boolean isBoolean = tryParseBoolean(userInput[i]);
-                                if(isBoolean)
-                                {
-                                    userConverterObjects[i] = Boolean.parseBoolean(userInput[i]);
-                                }
-                            }
-
-                            else
-                            {
-                                userConverterObjects[i] = userInput[i];
-                            }
-                        }
-
+                        converterUserInput(classes,userConverterObjects,methods[choice],userInput);
                         Method UsingMethod =  UsingClass.getDeclaredMethod(methods[choice].getName(), methods[choice].getParameterTypes());
                         Object usingClass = UsingClass.newInstance();
                         out.println(UsingMethod.invoke(usingClass,userConverterObjects));
-
                     }
 
                     else
@@ -315,6 +440,6 @@ public class ThreadServer extends Thread
         catch (Exception e)
         {
             e.printStackTrace();
-        }
-    }
+        }    }
 }
+

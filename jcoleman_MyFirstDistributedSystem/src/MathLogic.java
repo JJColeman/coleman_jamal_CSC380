@@ -26,6 +26,11 @@ public class MathLogic
     }
 
     public int add(int a) {
-        return 0;
+        return a;
+    }
+
+    public int fight(int a, Rogue l)
+    {
+       return 0;
     }
 }
