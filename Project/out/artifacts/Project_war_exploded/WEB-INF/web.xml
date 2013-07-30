@@ -14,4 +14,22 @@
         <url-pattern>/RestServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>PickOrder</servlet-name>
+        <servlet-class>PickOrder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PickOrder</servlet-name>
+        <url-pattern>/PickOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GrabOrder</servlet-name>
+        <servlet-class>GrabOrder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GrabOrder</servlet-name>
+        <url-pattern>/GrabOrder</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.text.Document;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -43,7 +45,7 @@ public class RestServlet extends HttpServlet {
 
         try
         {
-            File file = new File("C:\\Users\\jcoleman\\Documents\\Assignment Folder\\Quarter 12\\Project\\src\\Restaurant");
+            File file = new File("C:\\Users\\jcoleman\\Documents\\Assignment Folder\\Quarter 12\\Java III\\coleman_jamal_CSC380\\Project\\src\\Restaurant");
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             org.w3c.dom.Document document = documentBuilder.parse(file);
@@ -72,23 +74,24 @@ public class RestServlet extends HttpServlet {
                 menus.add(newMenu);
             }
 
-            for(int i=0; i<menus.size(); i++){
-                System.out.println(menus.get(i).getName());
+            int count = 0;
+            for(Menu menu: menus)
+            {
+                File menuFile = new File("C:\\file" + count + ".xml");
+                JAXBContext jaxbContext = JAXBContext.newInstance(Menu.class);
+                Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
-                for(int j=0; j<menus.get(i).getOrder().size(); j++)     {
-                System.out.println(menus.get(i).getOrder().get(j).getName() +"     Price:     "  + menus.get(i).getOrder().get(j).getPrice());
-
-                }
+                jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+                jaxbMarshaller.marshal(menu,menuFile);
+                jaxbMarshaller.marshal(menu,out);
+                count++;
             }
-
         }
 
         catch (Exception e1)
         {
             e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-
-
 
         out.close();
         in.close();

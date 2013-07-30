@@ -25,16 +25,38 @@ public class Client
 
         try
         {
-            HttpURLConnection conn = (HttpURLConnection) new URL("http://localhost:8080/RestServlet").openConnection();
-            conn.setRequestMethod("GET");
+            HttpURLConnection conn1 = (HttpURLConnection) new URL("http://localhost:8080/RestServlet").openConnection();
+            conn1.setRequestMethod("GET");
 
-            in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String input = "";
-            String result = "";
-            while((input=in.readLine()) !=null){
-                result += input;
+            in = new BufferedReader(new InputStreamReader(conn1.getInputStream()));
+            String input1 = "";
+            String result1 = "";
+            while((input1=in.readLine()) !=null){
+                result1 += input1 + "\n";
             }
-            System.out.println(result);
+            System.out.println(result1);
+
+            HttpURLConnection conn2 = (HttpURLConnection) new URL("http://localhost:8080/PickOrder").openConnection();
+            conn2.setRequestMethod("GET");
+
+            in = new BufferedReader(new InputStreamReader(conn2.getInputStream()));
+            String input2 = "";
+            String result2 = "";
+            while((input2=in.readLine()) !=null){
+                result2 += input2 + "\n";
+            }
+            System.out.println(result2);
+
+            HttpURLConnection conn3 = (HttpURLConnection) new URL("http://localhost:8080/GrabOrder").openConnection();
+            conn3.setRequestMethod("GET");
+
+            in = new BufferedReader(new InputStreamReader(conn3.getInputStream()));
+            String input3 = "";
+            String result3 = "";
+            while((input3=in.readLine()) !=null){
+                result3 += input3 + "\n";
+            }
+            System.out.println(result3);
         }
         catch(Exception e)
         {

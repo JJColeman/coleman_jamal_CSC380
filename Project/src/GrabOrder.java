@@ -15,7 +15,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +25,11 @@ import java.util.List;
  * Created with IntelliJ IDEA.
  * User: jcoleman
  * Date: 7/29/13
- * Time: 9:36 PM
+ * Time: 11:13 PM
  * To change this template use File | Settings | File Templates.
  */
-@WebServlet(name = "PickOrder")
-public class PickOrder extends HttpServlet {
+@WebServlet(name = "GrabOrder")
+public class GrabOrder extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -37,7 +38,7 @@ public class PickOrder extends HttpServlet {
     {
         ServletOutputStream out = response.getOutputStream();
         ServletInputStream in = request.getInputStream();
-        out.println("Grabbing Order");
+        out.println("Pick Order");
 
         try
         {
@@ -70,15 +71,15 @@ public class PickOrder extends HttpServlet {
                 menus.add(newMenu);
             }
 
-            int count = 10;
-            Menu menu = menus.get(0);
+            int count = 15;
+            Order order = menus.get(0).getOrder().get(0);
             File menuFile = new File("C:\\file" + count + ".xml");
-            JAXBContext jaxbContext = JAXBContext.newInstance(Menu.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(Order.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
-            jaxbMarshaller.marshal(menu,menuFile);
-            jaxbMarshaller.marshal(menu,out);
+            jaxbMarshaller.marshal(order,menuFile);
+            jaxbMarshaller.marshal(order,out);
         }
 
         catch (Exception e1)
