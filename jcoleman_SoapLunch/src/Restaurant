@@ -1,0 +1,18 @@
+<Restaurant>
+    <Menu name="American">
+        <Order name="Tator tots" price=".99">
+        </Order>
+        <Order name="Jerky" price="2.99">
+        </Order>
+        <Order name="Popcorn" price="1.99">
+        </Order>
+    </Menu>
+    <Menu name="Chinese">
+        <Order name="Orange Chicken" price="1.99">
+        </Order>
+        <Order name="Noodles" price="3.99">
+        </Order>
+        <Order name="Rice" price=".99">
+        </Order>
+    </Menu>
+</Restaurant>
