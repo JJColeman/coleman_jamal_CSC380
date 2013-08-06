@@ -2,9 +2,13 @@ import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 import java.net.Socket;
 import java.lang.Object;
+import java.net.URL;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -295,6 +299,23 @@ public class ThreadServer extends Thread
         }
     }
 
+    public List<Class> getClassesInPackage(String packageName) throws Exception {
+        URL packageUrl = this.getClass().getClassLoader().getResource(packageName.replace(".", "/"));
+        List allClasses = new ArrayList();
+        if(packageUrl != null) {
+            Path packagePath = Paths.get(packageUrl.toURI());
+            if(Files.isDirectory(packagePath)) {
+                try(DirectoryStream<Path> ds = Files.newDirectoryStream(packagePath, "*.class")) {
+                    for(Path d : ds) {
+                        allClasses.add(Class.forName(packageName + "." + d.getFileName().toString().replace(".class", "")));
+                    }
+                }
+            }
+            return allClasses;
+        }
+        return null;
+    }
+
     public void run()
     {
         try
@@ -304,15 +325,9 @@ public class ThreadServer extends Thread
 
             String readLines = "";
 
-            String path = "src";
-            File folder = new File(path);
-            List<Class> classes = new ArrayList<Class>();
+            String path = "Classes";
 
-            for(int i=0;i < folder.listFiles().length;i++)
-            {
-                Class grabbingClass = Class.forName(folder.listFiles()[i].getName().replaceFirst(".java",""));
-                classes.add(grabbingClass);
-            }
+            List<Class> classes = getClassesInPackage(path);
 
             out.println("Type in one of the following classes to use");
 
