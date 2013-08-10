@@ -1,0 +1,6 @@
+C:\Users\jcoleman\Documents\Assignment Folder\Quarter 12\Java III\coleman_jamal_CSC380\jcoleman_LunchFinalFrontier\C#ClientCode\jcoleman_Lunch\jcoleman_Lunch\bin\Debug\jcoleman_Lunch.exe.config
+C:\Users\jcoleman\Documents\Assignment Folder\Quarter 12\Java III\coleman_jamal_CSC380\jcoleman_LunchFinalFrontier\C#ClientCode\jcoleman_Lunch\jcoleman_Lunch\bin\Debug\jcoleman_Lunch.exe
+C:\Users\jcoleman\Documents\Assignment Folder\Quarter 12\Java III\coleman_jamal_CSC380\jcoleman_LunchFinalFrontier\C#ClientCode\jcoleman_Lunch\jcoleman_Lunch\bin\Debug\jcoleman_Lunch.pdb
+C:\Users\jcoleman\Documents\Assignment Folder\Quarter 12\Java III\coleman_jamal_CSC380\jcoleman_LunchFinalFrontier\C#ClientCode\jcoleman_Lunch\jcoleman_Lunch\obj\x86\Debug\jcoleman_Lunch.exe
+C:\Users\jcoleman\Documents\Assignment Folder\Quarter 12\Java III\coleman_jamal_CSC380\jcoleman_LunchFinalFrontier\C#ClientCode\jcoleman_Lunch\jcoleman_Lunch\obj\x86\Debug\jcoleman_Lunch.pdb
+C:\Users\jcoleman\Documents\Assignment Folder\Quarter 12\Java III\coleman_jamal_CSC380\jcoleman_LunchFinalFrontier\C#ClientCode\jcoleman_Lunch\jcoleman_Lunch\obj\x86\Debug\jcoleman_Lunch.csprojResolveAssemblyReference.cache

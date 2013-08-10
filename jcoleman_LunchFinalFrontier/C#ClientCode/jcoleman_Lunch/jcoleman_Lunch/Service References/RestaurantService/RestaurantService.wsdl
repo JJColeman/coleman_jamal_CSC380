@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://localhost/RestaurantService" name="RestaurantService" targetNamespace="http://services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://localhost/RestaurantService" location="http://localhost:8080/services/RestaurantService?wsdl=RestaurantService.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="RestaurantServiceSoapBinding" type="ns1:RestaurantService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getOrders">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getOrders">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getOrdersResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMenus">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getMenus">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getMenusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RestaurantService">
+    <wsdl:port name="RestaurantServiceImplPort" binding="tns:RestaurantServiceSoapBinding">
+      <soap:address location="http://localhost:8080/services/RestaurantService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

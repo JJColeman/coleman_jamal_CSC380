@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://localhost/RestaurantService" name="RestaurantService" targetNamespace="http://localhost/RestaurantService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://localhost/RestaurantService" elementFormDefault="unqualified" targetNamespace="http://localhost/RestaurantService" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getMenus" type="tns:getMenus" />
+      <xs:element name="getMenusResponse" type="tns:getMenusResponse" />
+      <xs:element name="getOrders" type="tns:getOrders" />
+      <xs:element name="getOrdersResponse" type="tns:getOrdersResponse" />
+      <xs:complexType name="getOrders">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="menuName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getOrdersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="order" type="tns:order" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="order">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orderName" type="xs:string" />
+          <xs:element name="price" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getMenus">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getMenusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="menu" type="tns:menu" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="menu">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="menuName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getOrdersResponse">
+    <wsdl:part name="parameters" element="ns1:getOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMenus">
+    <wsdl:part name="parameters" element="ns1:getMenus" />
+  </wsdl:message>
+  <wsdl:message name="getMenusResponse">
+    <wsdl:part name="parameters" element="ns1:getMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrders">
+    <wsdl:part name="parameters" element="ns1:getOrders" />
+  </wsdl:message>
+  <wsdl:portType name="RestaurantService">
+    <wsdl:operation name="getOrders">
+      <wsdl:input name="getOrders" message="ns1:getOrders" />
+      <wsdl:output name="getOrdersResponse" message="ns1:getOrdersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMenus">
+      <wsdl:input name="getMenus" message="ns1:getMenus" />
+      <wsdl:output name="getMenusResponse" message="ns1:getMenusResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
