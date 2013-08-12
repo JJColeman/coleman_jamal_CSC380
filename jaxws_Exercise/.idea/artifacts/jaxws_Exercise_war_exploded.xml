@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="jaxws_Exercise:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/jaxws_Exercise_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="jaxws_Exercise/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jaxws_Exercise" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="CXF Runtime" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

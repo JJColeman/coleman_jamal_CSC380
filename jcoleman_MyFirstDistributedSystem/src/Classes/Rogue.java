@@ -11,7 +11,7 @@ public class Rogue
 {
     int happy;
     String lad;
-    public Rogue(int happy, String lad)
+    public Rogue(int happy)
     {
         this.happy = happy;
         this.lad = lad;

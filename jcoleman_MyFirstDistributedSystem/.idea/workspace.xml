@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/Classes/MyTest.java" description="&#10;/**&#10; * Created with IntelliJ IDEA.&#10; * User: jcole..." line="2" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1108c886-7361-438e-89c2-ce1c23b41a61" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\jcoleman\Documents\Assignment Folder\Quarter 12\Java III\coleman_jamal_CSC380\jcoleman_MyFirstDistributedSystem\src\MathLogic.java" afterPath="$PROJECT_DIR$/src/Classes/MathLogic.java" />
-      <change type="MOVED" beforePath="C:\Users\jcoleman\Documents\Assignment Folder\Quarter 12\Java III\coleman_jamal_CSC380\jcoleman_MyFirstDistributedSystem\src\Rogue.java" afterPath="$PROJECT_DIR$/src/Classes/Rogue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThreadServer.java" afterPath="$PROJECT_DIR$/src/ThreadServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Classes/MyClass.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Classes/MyParam.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Classes/MyTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Classes/MathLogic.java" afterPath="$PROJECT_DIR$/src/Classes/MathLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Classes/Rogue.java" afterPath="$PROJECT_DIR$/src/Classes/Rogue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jcoleman_SoapLunch/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jcoleman_SoapLunch/.idea/workspace.xml" />
     </list>
     <ignored path="jcoleman_MyFirstDistributedSystem.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Server.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1373435204897" ignored="false" />
-    <file path="/MathLogic.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1374179067802" ignored="false" />
+    <file path="/MathLogic.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1376010075918" ignored="false" />
     <file path="/ThreadServer.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1375827244655" ignored="false" />
-    <file path="/fragment.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1373478569535" ignored="false" />
+    <file path="/fragment.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1376010981890" ignored="false" />
     <file path="/Client.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1373492380302" ignored="false" />
-    <file path="/Dummy.txt" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1375830655792" ignored="false" />
-    <file path="/Rogue.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1374190703563" ignored="false" />
+    <file path="/Dummy.txt" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1376009822169" ignored="false" />
+    <file path="/Rogue.java" changelist="1108c886-7361-438e-89c2-ce1c23b41a61" time="1376010022505" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -69,7 +73,6 @@
       </breakpoint>
     </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -82,7 +85,7 @@
       <file leaf-file-name="MathLogic.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Classes/MathLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="30" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
+            <state line="32" column="13" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,22 +109,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rogue.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Rogue.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classes/Rogue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="18" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
+            <state line="13" column="33" selection-start="253" selection-end="253" vertical-scroll-proportion="0.2790404">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadServer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ThreadServer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ThreadServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="434" column="52" selection-start="14980" selection-end="14980" vertical-scroll-proportion="0.76427704">
+            <state line="252" column="13" selection-start="6986" selection-end="6986" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyClass.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Classes/MyClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="28" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Classes/MyTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="13" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyParam.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Classes/MyParam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="1" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,6 +160,15 @@
         <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/net/DualStackPlainSocketImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="258" column="22" selection-start="7235" selection-end="7235" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileInputStream.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/io/FileInputStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="240" column="15" selection-start="8840" selection-end="8840" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -157,9 +196,12 @@
         <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/src/MathLogic.java" />
         <option value="$PROJECT_DIR$/src/Rogue.java" />
-        <option value="$PROJECT_DIR$/src/Classes/Rogue.java" />
-        <option value="$PROJECT_DIR$/src/Classes/MathLogic.java" />
         <option value="$PROJECT_DIR$/src/ThreadServer.java" />
+        <option value="$PROJECT_DIR$/src/Classes/MathLogic.java" />
+        <option value="$PROJECT_DIR$/src/Classes/MyParam.java" />
+        <option value="$PROJECT_DIR$/src/Classes/MyTest.java" />
+        <option value="$PROJECT_DIR$/src/Classes/MyClass.java" />
+        <option value="$PROJECT_DIR$/src/Classes/Rogue.java" />
       </list>
     </option>
   </component>
@@ -196,6 +238,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,7 +292,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,12 +307,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -340,19 +382,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -379,6 +408,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -487,25 +529,25 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3620309" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3938706" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2077185" sideWeight="0.5004803" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33484676" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.74914867" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2516704" sideWeight="0.63791144" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.6061294" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4846765" sideWeight="0.4995197" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33484676" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -578,31 +620,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="355" column="0" selection-start="13513" selection-end="13513" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_05/jre/lib/reflections-0.9.9-RC1-uberjar.jar!/org/reflections/Reflections.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jcoleman_MyFirstDistributedSystem.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="13" selection-start="6572" selection-end="6572" vertical-scroll-proportion="0.018480493" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="365" column="0" selection-start="13550" selection-end="13550" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" />
@@ -618,14 +635,23 @@
         <state line="600" column="0" selection-start="24566" selection-end="24566" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="10" selection-start="3579" selection-end="3579" vertical-scroll-proportion="0.33213645" />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/jre/lib/rt.jar!/sun/reflect/NativeConstructorAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.55684006" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/net/URLClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="365" column="0" selection-start="13550" selection-end="13550" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="185" column="0" selection-start="6161" selection-end="6161" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/net/DualStackPlainSocketImpl.java">
@@ -635,16 +661,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Classes/Rogue.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0">
+        <state line="240" column="15" selection-start="8840" selection-end="8840" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -656,19 +675,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Classes/MathLogic.java">
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="30" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classes/MyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ThreadServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="434" column="52" selection-start="14980" selection-end="14980" vertical-scroll-proportion="0.76427704">
+        <state line="252" column="13" selection-start="6986" selection-end="6986" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classes/MyParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="1" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classes/MyClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="28" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classes/MathLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="13" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classes/Rogue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="33" selection-start="253" selection-end="253" vertical-scroll-proportion="0.2790404">
+          <folding />
         </state>
       </provider>
     </entry>

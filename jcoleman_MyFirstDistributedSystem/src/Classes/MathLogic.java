@@ -27,6 +27,11 @@ public class MathLogic
 
     public int fight(int a, Rogue l)
     {
-       return 0;
+       return a + l.happy;
+    }
+
+    public int l(Rogue l)
+    {
+        return l.happy;
     }
 }
